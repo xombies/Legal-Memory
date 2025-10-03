@@ -1,6 +1,8 @@
-const nextconfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   experimental: {
-    'appDir': false,appDir: false,
+    appDir: false,
   },
 };
-module.exports = nextconfig;
+
+module.exports = nextConfig;
