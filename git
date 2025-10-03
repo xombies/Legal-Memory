@@ -1,0 +1,17 @@
+cd ~/Downloads/legalmemory-website-fixed
+
+# reset repo if needed
+rm -rf .git
+git init
+
+# connect to GitHub repo
+git remote add origin https://github.com/xombies/Legal-Memory.git
+
+# add all project files (not zipped)
+git add .
+git commit -m "Unpacked project files"
+
+# overwrite main branch
+git branch -M main
+git push -u origin main --force
+
