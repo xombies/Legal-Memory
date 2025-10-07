@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": null,
+  "github": {
+    "enabled": true,
+    "autoJobCancelation": true
+  },
+  "branches": {
+    "main": { "alias": ["legalmemory.vercel.app"] },
+    "v2": { "alias": ["v2.legalmemory.vercel.app"] },
+    "toolkit": { "alias": ["toolkit.legalmemory.vercel.app"] }
+  }
+}
