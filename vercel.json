@@ -3,19 +3,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": null,
-  "github": {
-    "enabled": true,
-    "autoJobCancelation": true
-  },
-  "branches": {
-    "main": { "alias": ["legalmemory.vercel.app"] },
-    "v2": { "alias": ["v2.legalmemory.vercel.app"] },
-    "toolkit": { "alias": ["toolkit.legalmemory.vercel.app"] }
-  },
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ]
 }
-git add vercel.json
-git commit -m "Add Vercel config with branch aliases and rewrite rule"
-git push
