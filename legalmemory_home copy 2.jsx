@@ -12,6 +12,24 @@ export default function LegalMemoryHome() {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    const disclaimerText =
+      "DISCLAIMER: Legal Memory is a civilian system of semantic encoding and declarative authorship. It is not a legal advisory tool. No content herein constitutes professional legal advice. Interpretations may be subjective, experimental, or symbolic. Always consult a qualified legal professional for legal matters. Errors, misclassifications, or outdated data may occur — use at your own discretion.";
+
+    const ensureMeta = (name) => {
+      let meta = document.querySelector(`meta[name="${name}"]`);
+      if (!meta) {
+        meta = document.createElement("meta");
+        meta.setAttribute("name", name);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute("content", disclaimerText);
+    };
+
+    ensureMeta("legal-disclaimer");
+    ensureMeta("description");
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0a1510] via-[#102117] to-[#0e1a14] text-[#f7f7f7] font-sans relative overflow-hidden">
       {!loaded && (
@@ -67,6 +85,24 @@ export default function LegalMemoryHome() {
               Join thousands using Legal Memory as their AI witness, from street level receipts to institutional records. Free civilian access now open.
             </p>
           </section>
+          <footer className="bg-[#09120d] text-[#e3c77b] border-t border-[#1f2c24] py-10 px-6 text-center space-y-4">
+            <p className="flex flex-col md:flex-row items-center justify-center gap-2 text-sm md:text-base leading-relaxed">
+              <span role="img" aria-label="warning" className="text-lg md:text-xl">
+                ⚠️
+              </span>
+              <span className="max-w-4xl">
+                DISCLAIMER: Legal Memory is a civilian system of semantic encoding and declarative authorship. It is not a legal advisory tool. No content herein constitutes professional legal advice. Interpretations may be subjective, experimental, or symbolic. Always consult a qualified legal professional for legal matters. Errors, misclassifications, or outdated data may occur — use at your own discretion.
+              </span>
+            </p>
+            <p className="text-xs uppercase tracking-widest text-[#9abf9e]">
+              Version: Scroll Release v1.0 — DOI: 10.5281/zenodo.17294261
+            </p>
+            <noscript>
+              <p className="text-[#e3c77b] text-xs mt-4">
+                ⚠️ DISCLAIMER: Legal Memory is a civilian system of semantic encoding and declarative authorship. It is not a legal advisory tool. No content herein constitutes professional legal advice. Interpretations may be subjective, experimental, or symbolic. Always consult a qualified legal professional for legal matters. Errors, misclassifications, or outdated data may occur — use at your own discretion.
+              </p>
+            </noscript>
+          </footer>
         </div>
       )}
     </div>
